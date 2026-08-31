@@ -17,7 +17,7 @@
 <body>
 <p class="lang"><a href="en.html">English version</a></p>
 <h1>Datenschutzerklärung – WSD („What Should I Do“)</h1>
-<p class="meta">Stand: 18. August 2026</p>
+<p class="meta">Stand: 31. August 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>
@@ -34,6 +34,15 @@ Reflexionen/Tagebucheinträge, Einstellungen und die Liste der von dir gewählte
 werden ausschließlich <strong>lokal auf deinem Gerät</strong> gespeichert. Sie werden von uns weder
 erhoben noch übertragen, verkauft oder mit Dritten geteilt. Die App zeigt keine Werbung und enthält
 keine Werbe- oder Marketing-Tracker.</p>
+<p>Lokal gespeichert werden insbesondere auch: deine To-do-Liste, deine Aufgaben-Erinnerungen, deine
+Blockier-Einstellungen (Tageslimit, Limits pro App, Schlafphase), dein Gems-Guthaben sowie die Namen,
+die du für Aufgaben wie „Ruf {Name} an“ eingibst oder aus deinen Kontakten auswählst (siehe
+Abschnitt&nbsp;3).</p>
+<p>Die App enthält technisch noch einen <strong>abgeschalteten</strong> Bereich für optionale
+Benutzerkonten und Cloud-Synchronisierung. In der veröffentlichten Version ist er nicht erreichbar:
+Es findet keine Anmeldung statt, und deine Inhalte werden nicht an einen Server übertragen.</p>
+<p>Ausnahmen von diesem Grundprinzip — also die Fälle, in denen Daten dein Gerät verlassen — sind
+vollständig in Abschnitt&nbsp;4 beschrieben (freiwilliges Feedback, Absturzberichte, Produktanalyse).</p>
 
 <h2>3. Nutzung der Geräteberechtigungen (nur auf dem Gerät)</h2>
 <p>Für ihre Kernfunktion (Erkennen ablenkender Apps und Anstoß zu einer sinnvollen Aktivität) nutzt
@@ -43,11 +52,16 @@ deinem Gerät verarbeitet und niemals an uns oder Dritte übertragen:</strong></
   <li><strong>Nutzungsdaten-Zugriff (Usage Access):</strong> WSD liest lokal aus, welche App gerade im
     Vordergrund ist bzw. wie lange Apps genutzt wurden, um deine selbst gewählten Bildschirmzeit-Limits
     umzusetzen.</li>
+  <li><strong>Liste der installierten Apps:</strong> Damit du auswählen kannst, welche Apps blockiert
+    werden sollen, liest WSD lokal aus, welche startbaren Apps auf dem Gerät installiert sind
+    (Name und Symbol). Diese Liste wird nur zur Anzeige der Auswahl genutzt und
+    <strong>verlässt dein Gerät nicht</strong>; gespeichert werden nur die von dir ausgewählten Apps.</li>
   <li><strong>Bedienungshilfen-API (Accessibility API), optional:</strong> Wenn du diese Funktion
     ausdrücklich aktivierst, nutzt WSD die Android-Bedienungshilfen ausschließlich dazu, den
     <em>Paketnamen</em> der aktuell geöffneten App zu erkennen, um von dir blockierte Apps zuverlässig
     und in Echtzeit zu erkennen. WSD liest dabei <strong>keine Bildschirminhalte, keine Eingaben und
-    keine personenbezogenen Daten</strong> aus. Über die Bedienungshilfen-API erlangte Informationen
+    keine personenbezogenen Daten</strong> aus — die einzigen Ausnahmen sind die beiden folgenden,
+    separat zu aktivierenden Beta-Funktionen. Über die Bedienungshilfen-API erlangte Informationen
     werden weder gespeichert (über den Moment hinaus) noch übertragen oder an Dritte weitergegeben.
     Du kannst die Funktion jederzeit in den Systemeinstellungen deaktivieren.</li>
   <li><strong>„Nur Instagram-Reels blockieren“ (optional, experimentell):</strong> Wenn du diese
@@ -68,11 +82,24 @@ deinem Gerät verarbeitet und niemals an uns oder Dritte übertragen:</strong></
     auf deinem Gerät.</li>
   <li><strong>Kamera (optional):</strong> Nur wenn du eine Aufgabe mit Kamera-Überprüfung startest
     (z. B. „20 Liegestütze“ per Bewegungserkennung oder „Foto von Gras“ per Bilderkennung), greift WSD
-    auf die Kamera zu. Die Auswertung erfolgt <strong>vollständig auf dem Gerät</strong> mit lokal
-    installierten Modellen (Google ML Kit, ohne Internetverbindung). Es werden <strong>keine Bilder,
+    auf die Kamera zu. Die Auswertung erfolgt <strong>vollständig auf dem Gerät</strong> mit Modellen,
+    die in der App mitgeliefert sind (Google ML Kit sowie Google MediaPipe mit einem enthaltenen
+    Bildklassifikator) — dafür ist <strong>keine Internetverbindung nötig</strong>, und es werden keine
+    Aufnahmen an einen Dienst geschickt. Es werden <strong>keine Bilder,
     Videos oder Kamerainhalte gespeichert, übertragen oder an uns bzw. Dritte weitergegeben</strong>;
     die Kamera läuft nur im Vordergrund während der Überprüfung. Verweigerst du die Berechtigung,
     kannst du die Aufgabe stattdessen manuell als erledigt markieren.</li>
+  <li><strong>Kontakte (optional):</strong> Für Aufgaben wie „Ruf {Name} an“ oder „Schreib {Name}“
+    kannst du eine Person über die <em>Kontaktauswahl deines Systems</em> auswählen, statt den Namen
+    zu tippen. WSD wertet dabei nur den <strong>von dir ausgewählten Eintrag</strong> aus und
+    übernimmt daraus ausschließlich den <strong>angezeigten Namen</strong> sowie einen internen
+    Verweis auf diesen Kontakt („Lookup-Key“) — damit du die Person später mit einem Tipp direkt aus
+    der Aufgabe heraus anrufen oder anschreiben kannst. Beides wird <strong>ausschließlich lokal auf
+    deinem Gerät</strong> gespeichert. WSD liest und speichert <strong>keine Telefonnummern,
+    E-Mail-Adressen, Fotos oder sonstigen Kontaktdaten</strong>, durchsucht dein Adressbuch nicht und
+    überträgt keine Kontaktdaten an uns oder Dritte. Die Berechtigung ist <strong>freiwillig</strong>:
+    Verweigerst du sie, entfällt lediglich die Auswahl-Schaltfläche — Namen kannst du weiterhin
+    manuell eintragen. Du kannst sie jederzeit in den Android-Einstellungen entziehen.</li>
   <li><strong>Benachrichtigungen:</strong> Für Aufgaben-Erinnerungen und die dauerhafte
     Hinweis-Benachrichtigung des Bildschirmzeit-Dienstes.</li>
 </ul>
@@ -102,13 +129,81 @@ Google speichert Crash-Daten in der Regel 90 Tage. Dabei kann eine Übermittlung
 Google ist nach dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen:
 <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
+<h3>4.3 Produktanalyse (PostHog)</h3>
+<p>Um zu verstehen, welche Funktionen tatsächlich genutzt werden und wo Abläufe abbrechen, nutzt WSD
+das Produktanalyse-Werkzeug <strong>PostHog</strong>. Wir verwenden dabei bewusst die
+<strong>EU-Instanz von PostHog</strong> (<code>eu.i.posthog.com</code>), die in Frankfurt am Main,
+Deutschland (AWS-Region <code>eu-central-1</code>) betrieben wird.</p>
+
+<p><strong>Übermittelt werden:</strong></p>
+<ul>
+  <li><strong>Ereignisse zu Aktionen in der App</strong> — jeweils mit einem festen Namen und einer
+    begrenzten Anzahl technischer Zusatzangaben (Zahlen, Ja/Nein-Werte, feste Kennungen). Beispiele:
+    Onboarding abgeschlossen (Anzahl gewählter Interessen, Anzahl blockierter Apps, eingestelltes
+    Limit), Aufgabe erledigt (Kennung der Aufgabe, Art der Überprüfung, Anzahl erhaltener Gems),
+    Gewohnheit gespeichert oder gelöscht, To-do erstellt oder erledigt, Erinnerung eingestellt
+    (ja/nein), Check-in abgeschickt (Anzahl beantworteter Fragen), Reflexion gespeichert
+    (gewählte Stimmung), Bildschirmzeit gekauft (Paketgröße, Gem-Preis), Blockier-Overlay angezeigt
+    (Auslöser, ob überspringbar, welche Overlay-Variante, ggf. Dauer der laufenden Sitzung),
+    Feedback abgeschickt (Art, Bewertung, ob ein Screenshot angehängt war).</li>
+  <li><strong>Automatische technische Angaben</strong>, die das PostHog-SDK jedem Ereignis anhängt:
+    App-Version und Build-Nummer, Gerätehersteller, Gerätemodell und Gerätetyp, Betriebssystem und
+    dessen Version, Bildschirmgröße und -dichte, Spracheinstellung, Zeitzone, Verbindungsart bzw.
+    Mobilfunkanbieter, User-Agent sowie die Version der Analyse-Bibliothek.</li>
+  <li><strong>Automatische App-Lebenszyklus-Ereignisse</strong> des SDK: Installation, Update, Öffnen
+    und Verlassen der App, gewechselte Bildschirme innerhalb der App sowie geöffnete App-Links.</li>
+  <li><strong>Eine pseudonyme Installations-Kennung</strong> — eine vom SDK zufällig erzeugte ID, die
+    lokal in der App gespeichert wird. Sie ist <strong>nicht</strong> die Android-Werbe-ID, enthält
+    keinen Namen, keine E-Mail-Adresse und keine Gerätekennung des Herstellers, und wird nicht mit
+    anderen Diensten oder Apps geteilt. Sie dient nur dazu, mehrere Ereignisse einer Nutzung
+    zuzuordnen, und wird zurückgesetzt, wenn du die App deinstallierst oder ihre Daten löschst.</li>
+  <li><strong>Fehlerereignisse:</strong> Stürzt die App ab oder tritt ein unbehandelter Fehler auf,
+    übermittelt PostHog zusätzlich den technischen Fehlerbericht (Fehlertyp, Fehlermeldung,
+    Stacktrace) — parallel zu Abschnitt&nbsp;4.2. Diese Berichte beschreiben den Programmablauf; sie
+    sind nicht dafür gedacht, von dir eingegebene Inhalte zu enthalten.</li>
+  <li><strong>IP-Adresse:</strong> Technisch bedingt erhält PostHog beim Senden eines Ereignisses die
+    IP-Adresse deiner Internetverbindung. Wir werten sie nicht aus und nutzen sie nicht zur
+    Identifizierung; sie dient höchstens einer grobkörnigen Länderzuordnung.</li>
+</ul>
+
+<p><strong>Ausdrücklich nicht übermittelt werden:</strong> die Texte deiner Aufgaben, To-dos,
+Notizen und Reflexionen; Namen oder Verweise aus deinen Kontakten; Screenshots, Fotos oder
+Kamerainhalte; die Namen oder Paketnamen der von dir blockierten oder geöffneten Apps; deine
+Bildschirmzeit-Messwerte; sowie Werbe-IDs. WSD nutzt <strong>keine Sitzungsaufzeichnung</strong>
+(kein „Session Replay“, keine Bildschirmaufnahme), kein Tracking über App-Grenzen hinweg und keine
+Weitergabe an Werbenetzwerke.</p>
+
+<p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes
+Interesse an der Verbesserung und Stabilität der App). Bei der Abwägung berücksichtigen wir, dass die
+Daten pseudonym sind, keine von dir geschriebenen Inhalte enthalten, nicht zu Werbezwecken genutzt
+und nicht mit anderen Quellen zusammengeführt werden. <strong>Speicherdauer:</strong> Wir bewahren
+Analysedaten nur so lange auf, wie wir sie zur Produktverbesserung benötigen — längstens
+<strong>12 Monate</strong> ab Erhebung.</p>
+
+<p><strong>Drittlandübermittlung:</strong> Die Verarbeitung findet in der EU (Deutschland) statt.
+PostHog ist ein US-Unternehmen; ein Zugriff aus den USA — etwa durch den Support — ist nicht
+vollständig ausgeschlossen. PostHog stützt solche Übermittlungen auf die
+EU-Standardvertragsklauseln (SCC). Weitere Informationen:
+<a href="https://posthog.com/privacy">posthog.com/privacy</a>,
+<a href="https://posthog.com/dpa">posthog.com/dpa</a> und
+<a href="https://posthog.com/subprocessors">posthog.com/subprocessors</a>.</p>
+
+<p><strong>Widerspruch:</strong> Du kannst dieser Verarbeitung jederzeit widersprechen
+(Art.&nbsp;21 DSGVO) — eine E-Mail an
+<a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a> genügt, eine Begründung ist
+nicht nötig. Unabhängig davon endet die Erhebung sofort, wenn du die App deinstallierst; das Löschen
+der App-Daten in den Android-Einstellungen setzt zusätzlich die Installations-Kennung zurück.</p>
+
 <h2>5. Empfänger / Auftragsverarbeiter</h2>
 <ul>
   <li><strong>Google Ireland Ltd.</strong> (Google Apps Script / Gmail) — nur für freiwillig gesendetes Feedback (Versand an unser Support-Postfach).</li>
   <li><strong>Google Ireland Ltd.</strong> (Firebase Crashlytics) — nur für Absturzberichte.</li>
+  <li><strong>PostHog, Inc.</strong>, 2261 Market Street #4008, San Francisco, CA 94114, USA —
+    Produktanalyse und Fehlerberichte, verarbeitet auf der EU-Instanz in Frankfurt am Main
+    (Abschnitt&nbsp;4.3).</li>
 </ul>
 <p>Eine darüber hinausgehende Weitergabe personenbezogener Daten findet nicht statt. Wir verkaufen
-keine Daten.</p>
+keine Daten. Werbenetzwerke und Marketing-Dienstleister erhalten keine Daten aus der App.</p>
 
 <h2>6. Deine Rechte (Art. 15–21 DSGVO)</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
@@ -116,6 +211,9 @@ Datenübertragbarkeit sowie Widerspruch gegen Verarbeitungen auf Grundlage berec
 Erteilte Einwilligungen kannst du jederzeit mit Wirkung für die Zukunft widerrufen. Wende dich dazu
 an <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a>. Außerdem hast du das
 Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art.&nbsp;77 DSGVO).</p>
+<p>Gegen die Produktanalyse (Abschnitt&nbsp;4.3) und die Absturzberichte (Abschnitt&nbsp;4.2) — beide
+auf Grundlage eines berechtigten Interesses — kannst du jederzeit ohne Begründung Widerspruch
+einlegen.</p>
 <p>Hinweis: Da alle App-Inhalte lokal gespeichert sind, löschst du sie vollständig, indem du die
 App deinstallierst oder ihre Daten in den Android-Einstellungen löschst.</p>
 

@@ -17,7 +17,7 @@
 <body>
 <p class="lang"><a href="index.html">Deutsche Version</a></p>
 <h1>Privacy Policy – WSD (“What Should I Do”)</h1>
-<p class="meta">Last updated: August 18, 2026</p>
+<p class="meta">Last updated: August 31, 2026</p>
 
 <h2>1. Controller</h2>
 <p>
@@ -33,6 +33,14 @@ everything you create in the app — tasks, habits, check-ins (e.g. your energy 
 reflections/journal entries, settings, and the list of “distracting apps” you selected — is stored
 <strong>only locally on your device</strong>. We do not collect, transmit, sell, or share this data.
 The app shows no ads and contains no advertising or marketing trackers.</p>
+<p>This also covers, in particular: your to-do list, your task reminders, your blocking settings
+(daily limit, per-app limits, sleep phase), your gem balance, and the names you type or pick from your
+contacts for tasks such as “Call {name}” (see section&nbsp;3).</p>
+<p>The app still contains a <strong>disabled</strong> area for optional user accounts and cloud sync.
+It is unreachable in the published version: there is no sign-in, and your content is not transmitted
+to any server.</p>
+<p>The exceptions to this core principle — the cases in which data does leave your device — are
+described in full in section&nbsp;4 (voluntary feedback, crash reports, product analytics).</p>
 
 <h2>3. Use of device permissions (on-device only)</h2>
 <p>For its core feature (detecting distracting apps and nudging you towards a meaningful activity),
@@ -41,10 +49,15 @@ your device and is never transmitted to us or to third parties:</strong></p>
 <ul>
   <li><strong>Usage access:</strong> WSD reads locally which app is in the foreground and how long apps
     have been used, in order to enforce the screen-time limits you set yourself.</li>
+  <li><strong>List of installed apps:</strong> So you can choose which apps to block, WSD reads
+    locally which launchable apps are installed on the device (name and icon). This list is used only
+    to render that picker and <strong>never leaves your device</strong>; only the apps you selected are
+    stored.</li>
   <li><strong>Accessibility API (optional):</strong> If you explicitly enable this feature, WSD uses
     Android's accessibility API solely to detect the <em>package name</em> of the app currently in the
     foreground, so it can reliably block apps you chose in real time. WSD does <strong>not read screen
-    content, input, or any personal data</strong> through this API. Information obtained via the
+    content, input, or any personal data</strong> through this API — the only exceptions are the two
+    separately enabled beta features described below. Information obtained via the
     accessibility API is neither stored (beyond the moment of detection) nor transmitted or shared with
     third parties. You can disable this at any time in your system settings.</li>
   <li><strong>“Block Instagram Reels only” (optional, experimental):</strong> If you separately turn
@@ -62,11 +75,22 @@ your device and is never transmitted to us or to third parties:</strong></p>
   <li><strong>Display over other apps (overlay):</strong> only to show the nudge overlay on your device.</li>
   <li><strong>Camera (optional):</strong> Only when you start a task with camera verification
     (e.g. “20 push-ups” via motion detection or “photograph grass” via image recognition) does WSD
-    access the camera. Analysis runs <strong>entirely on your device</strong> using locally installed
-    models (Google ML Kit, no internet connection). <strong>No images, video, or camera content is
-    stored, transmitted, or shared with us or third parties</strong>; the camera runs only in the
-    foreground during the check. If you deny the permission, you can instead mark the task done
-    manually.</li>
+    access the camera. Analysis runs <strong>entirely on your device</strong> using models bundled
+    with the app (Google ML Kit plus Google MediaPipe with an included image classifier) — this needs
+    <strong>no internet connection</strong> and no capture is sent to any service. <strong>No images,
+    video, or camera content is stored, transmitted, or shared with us or third parties</strong>; the
+    camera runs only in the foreground during the check. If you deny the permission, you can instead
+    mark the task done manually.</li>
+  <li><strong>Contacts (optional):</strong> For tasks such as “Call {name}” or “Text {name}” you can
+    pick a person via your <em>system's contact picker</em> instead of typing the name. WSD evaluates
+    only the <strong>entry you picked</strong> and takes from it exclusively the
+    <strong>display name</strong> plus an internal reference to that contact (its “lookup key”) — so
+    you can later call or message that person with one tap from the task. Both are stored
+    <strong>only locally on your device</strong>. WSD does not read or store <strong>phone numbers,
+    e-mail addresses, photos, or any other contact details</strong>, does not scan your address book,
+    and transmits no contact data to us or third parties. The permission is
+    <strong>optional</strong>: if you deny it, only the picker button goes away — you can still enter
+    names manually. You can revoke it at any time in your Android settings.</li>
   <li><strong>Notifications:</strong> for task reminders and the persistent notification of the
     screen-time service.</li>
 </ul>
@@ -94,12 +118,76 @@ Google typically retains crash data for 90 days. Data may be transferred to the 
 certified under the EU-US Data Privacy Framework. More information:
 <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
+<h3>4.3 Product analytics (PostHog)</h3>
+<p>To understand which features are actually used and where flows break down, WSD uses the product
+analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>EU instance</strong>
+(<code>eu.i.posthog.com</code>), which is operated in Frankfurt am Main, Germany (AWS region
+<code>eu-central-1</code>).</p>
+
+<p><strong>What is transmitted:</strong></p>
+<ul>
+  <li><strong>Events about actions in the app</strong> — each with a fixed name and a limited set of
+    technical attributes (numbers, yes/no values, fixed identifiers). Examples: onboarding completed
+    (number of interests chosen, number of blocked apps, limit configured), task completed (task
+    identifier, type of verification, gems awarded), habit saved or deleted, to-do created or
+    completed, reminder set (yes/no), check-in submitted (number of questions answered), reflection
+    saved (mood selected), screen time purchased (pack size, gem price), blocking overlay shown
+    (trigger, whether skippable, which overlay variant, session length where applicable), feedback
+    submitted (type, rating, whether a screenshot was attached).</li>
+  <li><strong>Automatic technical attributes</strong> that the PostHog SDK adds to every event: app
+    version and build number, device manufacturer, device model and type, operating system and its
+    version, screen size and density, language setting, time zone, connection type or mobile carrier,
+    user agent, and the analytics library version.</li>
+  <li><strong>Automatic app lifecycle events</strong> from the SDK: install, update, opening and
+    backgrounding the app, screens changed within the app, and app links opened.</li>
+  <li><strong>A pseudonymous installation identifier</strong> — a random ID generated by the SDK and
+    stored locally in the app. It is <strong>not</strong> the Android advertising ID, contains no
+    name, no e-mail address and no manufacturer device identifier, and is not shared with other
+    services or apps. It only serves to group several events from one usage, and it is reset when you
+    uninstall the app or clear its data.</li>
+  <li><strong>Error events:</strong> if the app crashes or hits an unhandled error, PostHog also
+    receives the technical error report (error type, error message, stack trace) — in parallel to
+    section&nbsp;4.2. These reports describe the program flow; they are not intended to contain
+    content you entered.</li>
+  <li><strong>IP address:</strong> for technical reasons PostHog receives the IP address of your
+    internet connection when an event is sent. We do not evaluate it and do not use it to identify
+    you; at most it serves a coarse country assignment.</li>
+</ul>
+
+<p><strong>Explicitly not transmitted:</strong> the text of your tasks, to-dos, notes, and
+reflections; names or references from your contacts; screenshots, photos, or camera content; the
+names or package names of the apps you block or open; your screen-time measurements; and advertising
+IDs. WSD uses <strong>no session recording</strong> (no “session replay”, no screen capture), no
+cross-app tracking, and passes nothing to advertising networks.</p>
+
+<p><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in improving and stabilizing
+the app). In balancing interests we take into account that the data is pseudonymous, contains none of
+the content you wrote, is not used for advertising, and is not combined with other sources.
+<strong>Retention:</strong> we keep analytics data only as long as we need it to improve the product —
+at most <strong>12 months</strong> from collection.</p>
+
+<p><strong>International transfers:</strong> processing takes place in the EU (Germany). PostHog is a
+US company; access from the US — e.g. by their support — cannot be entirely ruled out. PostHog relies
+on the EU Standard Contractual Clauses (SCCs) for such transfers. More information:
+<a href="https://posthog.com/privacy">posthog.com/privacy</a>,
+<a href="https://posthog.com/dpa">posthog.com/dpa</a>, and
+<a href="https://posthog.com/subprocessors">posthog.com/subprocessors</a>.</p>
+
+<p><strong>Objection:</strong> you may object to this processing at any time (Art. 21 GDPR) — an
+e-mail to <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a> is enough, no
+reason required. Independently of that, collection stops immediately when you uninstall the app;
+clearing the app's data in Android settings additionally resets the installation identifier.</p>
+
 <h2>5. Recipients / processors</h2>
 <ul>
   <li><strong>Google Ireland Ltd.</strong> (Google Apps Script / Gmail) — only for voluntarily submitted feedback (delivery to our support inbox).</li>
   <li><strong>Google Ireland Ltd.</strong> (Firebase Crashlytics) — only for crash reports.</li>
+  <li><strong>PostHog, Inc.</strong>, 2261 Market Street #4008, San Francisco, CA 94114, USA —
+    product analytics and error reports, processed on the EU instance in Frankfurt am Main
+    (section&nbsp;4.3).</li>
 </ul>
-<p>No other personal data is shared. We do not sell data.</p>
+<p>No other personal data is shared. We do not sell data. Advertising networks and marketing service
+providers receive no data from the app.</p>
 
 <h2>6. Your rights (Art. 15–21 GDPR)</h2>
 <p>You have the right to access, rectification, erasure, restriction of processing, data portability,
@@ -107,6 +195,8 @@ and to object to processing based on legitimate interests. You may withdraw any 
 with future effect. Contact us at
 <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a>. You also have the right to
 lodge a complaint with a data protection supervisory authority (Art. 77 GDPR).</p>
+<p>You may object at any time, without giving reasons, to the product analytics (section&nbsp;4.3) and
+the crash reports (section&nbsp;4.2) — both of which rest on a legitimate interest.</p>
 <p>Note: since all app content is stored locally, you delete it completely by uninstalling the app or
 clearing its data in Android settings.</p>
 
