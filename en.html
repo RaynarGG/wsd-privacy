@@ -17,7 +17,7 @@
 <body>
 <p class="lang"><a href="index.html">Deutsche Version</a></p>
 <h1>Privacy Policy – WSD (“What Should I Do”)</h1>
-<p class="meta">Last updated: August 31, 2026</p>
+<p class="meta">Last updated: October 6, 2026</p>
 
 <h2>1. Controller</h2>
 <p>
@@ -36,6 +36,12 @@ The app shows no ads and contains no advertising or marketing trackers.</p>
 <p>This also covers, in particular: your to-do list, your task reminders, your blocking settings
 (daily limit, per-app limits, sleep phase), your gem balance, and the names you type or pick from your
 contacts for tasks such as “Call {name}” (see section&nbsp;3).</p>
+<p>Your <strong>usage sessions</strong> are stored only locally as well: when you open a blocked app,
+WSD asks how long you want to use it. It stores the start time, the length you chose and — only if
+you want — your <strong>plan for afterwards</strong> (“Afterwards I'll …”, at most 60 characters,
+written by you or taken from a to-do or an idea) together with your later answer on whether you got
+to it. This plan is <strong>never transmitted</strong>, not synced, and deleted together with the
+rest of the app data when you uninstall the app or clear its data.</p>
 <p>The app still contains a <strong>disabled</strong> area for optional user accounts and cloud sync.
 It is unreachable in the published version: there is no sign-in, and your content is not transmitted
 to any server.</p>
@@ -57,21 +63,22 @@ your device and is never transmitted to us or to third parties:</strong></p>
     Android's accessibility API solely to detect the <em>package name</em> of the app currently in the
     foreground, so it can reliably block apps you chose in real time. WSD does <strong>not read screen
     content, input, or any personal data</strong> through this API — the only exceptions are the two
-    separately enabled beta features described below. Information obtained via the
+    Reels/Shorts blocking features described below, which are only active after your explicit
+    consent. Information obtained via the
     accessibility API is neither stored (beyond the moment of detection) nor transmitted or shared with
     third parties. You can disable this at any time in your system settings.</li>
-  <li><strong>“Block Instagram Reels only” (optional, experimental):</strong> If you separately turn
-    on this beta feature and consent to it, WSD additionally reads Instagram's on-screen content
+  <li><strong>“Block Instagram Reels”:</strong> Offered, pre-selected, during setup, but only active
+    after you separately consent to it (in setup or later in the app). Once active, WSD additionally reads Instagram's on-screen content
     <em>via the accessibility API, only while Instagram is in the foreground</em>, for the sole purpose
     of recognizing whether the Reels screen is open so it can block it. No other app is read; the
     content is evaluated transiently on your device and is <strong>never stored, transmitted, or
-    shared</strong>. This feature is off by default and can be turned off anytime in the app.</li>
-  <li><strong>“Block YouTube Shorts only” (optional, experimental):</strong> If you separately turn
-    on this beta feature and consent to it, WSD additionally reads YouTube's on-screen content
+    shared</strong>. Without your consent the feature stays off, and it can be turned off anytime in the app.</li>
+  <li><strong>“Block YouTube Shorts”:</strong> Offered, pre-selected, during setup, but only active
+    after you separately consent to it (in setup or later in the app). Once active, WSD additionally reads YouTube's on-screen content
     <em>via the accessibility API, only while YouTube is in the foreground</em>, for the sole purpose
     of recognizing whether the Shorts screen is open so it can block it. No other app is read; the
     content is evaluated transiently on your device and is <strong>never stored, transmitted, or
-    shared</strong>. This feature is off by default and can be turned off anytime in the app.</li>
+    shared</strong>. Without your consent the feature stays off, and it can be turned off anytime in the app.</li>
   <li><strong>Display over other apps (overlay):</strong> only to show the nudge overlay on your device.</li>
   <li><strong>Camera (optional):</strong> Only when you start a task with camera verification
     (e.g. “20 push-ups” via motion detection or “photograph grass” via image recognition) does WSD
@@ -131,9 +138,13 @@ analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>E
     (number of interests chosen, number of blocked apps, limit configured), task completed (task
     identifier, type of verification, gems awarded), habit saved or deleted, to-do created or
     completed, reminder set (yes/no), check-in submitted (number of questions answered), reflection
-    saved (mood selected), screen time purchased (pack size, gem price), blocking overlay shown
-    (trigger, whether skippable, which overlay variant, session length where applicable), feedback
-    submitted (type, rating, whether a screenshot was attached).</li>
+    saved (mood selected), blocking overlay shown (reason: daily limit, break, Reels or Shorts; which
+    overlay variant), feed left (Reels or Shorts), “how long?” question shown (no attributes), session
+    started (minutes chosen; whether the plan came from a to-do, an idea, your own text or nowhere —
+    not the text itself), follow-up answered (done yes/no), a blocking setting loosened on trial (kind
+    of setting — block list, limit or feed — and whether it starts later; not which app and not the
+    value), a trial ended (kind of setting; kept, reverted, undone or cancelled), feedback submitted
+    (type, rating, whether a screenshot was attached).</li>
   <li><strong>Automatic technical attributes</strong> that the PostHog SDK adds to every event: app
     version and build number, device manufacturer, device model and type, operating system and its
     version, screen size and density, language setting, time zone, connection type or mobile carrier,
@@ -155,7 +166,7 @@ analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>E
 </ul>
 
 <p><strong>Explicitly not transmitted:</strong> the text of your tasks, to-dos, notes, and
-reflections; names or references from your contacts; screenshots, photos, or camera content; the
+reflections; the text of your plans (“Afterwards I'll …”); names or references from your contacts; screenshots, photos, or camera content; the
 names or package names of the apps you block or open; your screen-time measurements; and advertising
 IDs. WSD uses <strong>no session recording</strong> (no “session replay”, no screen capture), no
 cross-app tracking, and passes nothing to advertising networks.</p>

@@ -17,7 +17,7 @@
 <body>
 <p class="lang"><a href="en.html">English version</a></p>
 <h1>Datenschutzerklärung – WSD („What Should I Do“)</h1>
-<p class="meta">Stand: 31. August 2026</p>
+<p class="meta">Stand: 6. Oktober 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>
@@ -38,6 +38,13 @@ keine Werbe- oder Marketing-Tracker.</p>
 Blockier-Einstellungen (Tageslimit, Limits pro App, Schlafphase), dein Gems-Guthaben sowie die Namen,
 die du für Aufgaben wie „Ruf {Name} an“ eingibst oder aus deinen Kontakten auswählst (siehe
 Abschnitt&nbsp;3).</p>
+<p>Ebenfalls nur lokal gespeichert werden deine <strong>Nutzungs-Sitzungen</strong>: Wenn du eine
+blockierte App öffnest, fragt WSD, wie lange du sie nutzen möchtest. Gespeichert werden der Startzeitpunkt,
+die gewählte Dauer und — nur wenn du das möchtest — dein <strong>Vorhaben für danach</strong>
+(„Danach werde ich …“, höchstens 60 Zeichen, selbst geschrieben oder aus einem To-do bzw. einer Idee
+übernommen) samt deiner späteren Antwort, ob du es geschafft hast. Dieses Vorhaben wird
+<strong>niemals übertragen</strong>, nicht synchronisiert und zusammen mit den übrigen App-Daten gelöscht,
+wenn du die App deinstallierst oder ihre Daten löschst.</p>
 <p>Die App enthält technisch noch einen <strong>abgeschalteten</strong> Bereich für optionale
 Benutzerkonten und Cloud-Synchronisierung. In der veröffentlichten Version ist er nicht erreichbar:
 Es findet keine Anmeldung statt, und deine Inhalte werden nicht an einen Server übertragen.</p>
@@ -60,24 +67,27 @@ deinem Gerät verarbeitet und niemals an uns oder Dritte übertragen:</strong></
     ausdrücklich aktivierst, nutzt WSD die Android-Bedienungshilfen ausschließlich dazu, den
     <em>Paketnamen</em> der aktuell geöffneten App zu erkennen, um von dir blockierte Apps zuverlässig
     und in Echtzeit zu erkennen. WSD liest dabei <strong>keine Bildschirminhalte, keine Eingaben und
-    keine personenbezogenen Daten</strong> aus — die einzigen Ausnahmen sind die beiden folgenden,
-    separat zu aktivierenden Beta-Funktionen. Über die Bedienungshilfen-API erlangte Informationen
+    keine personenbezogenen Daten</strong> aus — die einzigen Ausnahmen sind die beiden folgenden
+    Funktionen zur Reels-/Shorts-Blockierung, die erst nach deiner ausdrücklichen Zustimmung aktiv
+    sind. Über die Bedienungshilfen-API erlangte Informationen
     werden weder gespeichert (über den Moment hinaus) noch übertragen oder an Dritte weitergegeben.
     Du kannst die Funktion jederzeit in den Systemeinstellungen deaktivieren.</li>
-  <li><strong>„Nur Instagram-Reels blockieren“ (optional, experimentell):</strong> Wenn du diese
-    Beta-Funktion zusätzlich aktivierst und ihr zustimmst, liest WSD über die Bedienungshilfen-API
+  <li><strong>„Instagram-Reels blockieren“:</strong> Wird bei der Einrichtung vorausgewählt angeboten,
+    ist aber erst aktiv, nachdem du ihr separat zugestimmt hast (bei der Einrichtung oder später in
+    der App). Sobald sie aktiv ist, liest WSD über die Bedienungshilfen-API
     <em>ausschließlich während Instagram im Vordergrund ist</em> die Bildschirminhalte von Instagram –
     einzig, um zu erkennen, ob der Reels-Bildschirm geöffnet ist, und ihn zu blockieren. Keine andere
     App wird gelesen; die Inhalte werden nur kurzzeitig auf deinem Gerät ausgewertet und
-    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Die Funktion ist standardmäßig
-    aus und kann jederzeit in der App deaktiviert werden.</li>
-  <li><strong>„Nur YouTube-Shorts blockieren“ (optional, experimentell):</strong> Wenn du diese
-    separate Beta-Funktion aktivierst und ihr zustimmst, liest WSD über die Bedienungshilfen-API
+    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Ohne deine Zustimmung bleibt
+    die Funktion aus; sie kann jederzeit in der App deaktiviert werden.</li>
+  <li><strong>„YouTube-Shorts blockieren“:</strong> Wird bei der Einrichtung vorausgewählt angeboten,
+    ist aber erst aktiv, nachdem du ihr separat zugestimmt hast (bei der Einrichtung oder später in
+    der App). Sobald sie aktiv ist, liest WSD über die Bedienungshilfen-API
     <em>ausschließlich während YouTube im Vordergrund ist</em> die Bildschirminhalte von YouTube –
     einzig, um zu erkennen, ob der Shorts-Bildschirm geöffnet ist, und ihn zu blockieren. Keine andere
     App wird gelesen; die Inhalte werden nur kurzzeitig auf deinem Gerät ausgewertet und
-    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Die Funktion ist standardmäßig
-    aus und kann jederzeit in der App deaktiviert werden.</li>
+    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Ohne deine Zustimmung bleibt
+    die Funktion aus; sie kann jederzeit in der App deaktiviert werden.</li>
   <li><strong>Einblendung über anderen Apps (Overlay):</strong> Nur zur Anzeige des Erinnerungs-Overlays
     auf deinem Gerät.</li>
   <li><strong>Kamera (optional):</strong> Nur wenn du eine Aufgabe mit Kamera-Überprüfung startest
@@ -143,9 +153,14 @@ Deutschland (AWS-Region <code>eu-central-1</code>) betrieben wird.</p>
     Limit), Aufgabe erledigt (Kennung der Aufgabe, Art der Überprüfung, Anzahl erhaltener Gems),
     Gewohnheit gespeichert oder gelöscht, To-do erstellt oder erledigt, Erinnerung eingestellt
     (ja/nein), Check-in abgeschickt (Anzahl beantworteter Fragen), Reflexion gespeichert
-    (gewählte Stimmung), Bildschirmzeit gekauft (Paketgröße, Gem-Preis), Blockier-Overlay angezeigt
-    (Auslöser, ob überspringbar, welche Overlay-Variante, ggf. Dauer der laufenden Sitzung),
-    Feedback abgeschickt (Art, Bewertung, ob ein Screenshot angehängt war).</li>
+    (gewählte Stimmung), Blockier-Overlay angezeigt (Grund: Tageslimit, Pause, Reels oder Shorts;
+    welche Overlay-Variante), Feed verlassen (Reels oder Shorts), Frage „Wie lange?“ angezeigt (ohne
+    Zusatzangaben), Sitzung gestartet (gewählte Minuten; ob das Vorhaben aus einem To-do, einer Idee,
+    eigenem Text oder gar nicht stammt — nicht der Text selbst), Nachfrage beantwortet (geschafft
+    ja/nein), Blocker-Einstellung auf Probe gelockert (Art der Einstellung — Sperrliste, Limit oder
+    Feed — und ob sie erst später gilt; nicht welche App und nicht der Wert), Probe beendet (Art der
+    Einstellung; behalten, zurückgesetzt, rückgängig gemacht oder abgebrochen), Feedback abgeschickt
+    (Art, Bewertung, ob ein Screenshot angehängt war).</li>
   <li><strong>Automatische technische Angaben</strong>, die das PostHog-SDK jedem Ereignis anhängt:
     App-Version und Build-Nummer, Gerätehersteller, Gerätemodell und Gerätetyp, Betriebssystem und
     dessen Version, Bildschirmgröße und -dichte, Spracheinstellung, Zeitzone, Verbindungsart bzw.
@@ -167,7 +182,8 @@ Deutschland (AWS-Region <code>eu-central-1</code>) betrieben wird.</p>
 </ul>
 
 <p><strong>Ausdrücklich nicht übermittelt werden:</strong> die Texte deiner Aufgaben, To-dos,
-Notizen und Reflexionen; Namen oder Verweise aus deinen Kontakten; Screenshots, Fotos oder
+Notizen und Reflexionen; der Text deiner Vorhaben („Danach werde ich …“); Namen oder Verweise aus
+deinen Kontakten; Screenshots, Fotos oder
 Kamerainhalte; die Namen oder Paketnamen der von dir blockierten oder geöffneten Apps; deine
 Bildschirmzeit-Messwerte; sowie Werbe-IDs. WSD nutzt <strong>keine Sitzungsaufzeichnung</strong>
 (kein „Session Replay“, keine Bildschirmaufnahme), kein Tracking über App-Grenzen hinweg und keine
