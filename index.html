@@ -17,7 +17,7 @@
 <body>
 <p class="lang"><a href="en.html">English version</a></p>
 <h1>Datenschutzerklärung – WSD („What Should I Do“)</h1>
-<p class="meta">Stand: 31. August 2026</p>
+<p class="meta">Stand: 18. Oktober 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>
@@ -35,14 +35,23 @@ werden ausschließlich <strong>lokal auf deinem Gerät</strong> gespeichert. Sie
 erhoben noch übertragen, verkauft oder mit Dritten geteilt. Die App zeigt keine Werbung und enthält
 keine Werbe- oder Marketing-Tracker.</p>
 <p>Lokal gespeichert werden insbesondere auch: deine To-do-Liste, deine Aufgaben-Erinnerungen, deine
-Blockier-Einstellungen (Tageslimit, Limits pro App, Schlafphase), dein Gems-Guthaben sowie die Namen,
+Blockier-Einstellungen (Tageslimit, Limits pro App, Schlafphase), dein Gems-Guthaben, dein
+Premium-Status (siehe Abschnitt&nbsp;4.4) sowie die Namen,
 die du für Aufgaben wie „Ruf {Name} an“ eingibst oder aus deinen Kontakten auswählst (siehe
 Abschnitt&nbsp;3).</p>
+<p>Ebenfalls nur lokal gespeichert werden deine <strong>Nutzungs-Sitzungen</strong>: Wenn du eine
+blockierte App öffnest, fragt WSD, wie lange du sie nutzen möchtest. Gespeichert werden der Startzeitpunkt,
+die gewählte Dauer und — nur wenn du das möchtest — dein <strong>Vorhaben für danach</strong>
+(„Danach werde ich …“, höchstens 60 Zeichen, selbst geschrieben oder aus einem To-do bzw. einer Idee
+übernommen) samt deiner späteren Antwort, ob du es geschafft hast. Dieses Vorhaben wird
+<strong>niemals übertragen</strong>, nicht synchronisiert und zusammen mit den übrigen App-Daten gelöscht,
+wenn du die App deinstallierst oder ihre Daten löschst.</p>
 <p>Die App enthält technisch noch einen <strong>abgeschalteten</strong> Bereich für optionale
 Benutzerkonten und Cloud-Synchronisierung. In der veröffentlichten Version ist er nicht erreichbar:
 Es findet keine Anmeldung statt, und deine Inhalte werden nicht an einen Server übertragen.</p>
 <p>Ausnahmen von diesem Grundprinzip — also die Fälle, in denen Daten dein Gerät verlassen — sind
-vollständig in Abschnitt&nbsp;4 beschrieben (freiwilliges Feedback, Absturzberichte, Produktanalyse).</p>
+vollständig in Abschnitt&nbsp;4 beschrieben (freiwilliges Feedback, Absturzberichte, Produktanalyse,
+Käufe über Google Play).</p>
 
 <h2>3. Nutzung der Geräteberechtigungen (nur auf dem Gerät)</h2>
 <p>Für ihre Kernfunktion (Erkennen ablenkender Apps und Anstoß zu einer sinnvollen Aktivität) nutzt
@@ -60,24 +69,37 @@ deinem Gerät verarbeitet und niemals an uns oder Dritte übertragen:</strong></
     ausdrücklich aktivierst, nutzt WSD die Android-Bedienungshilfen ausschließlich dazu, den
     <em>Paketnamen</em> der aktuell geöffneten App zu erkennen, um von dir blockierte Apps zuverlässig
     und in Echtzeit zu erkennen. WSD liest dabei <strong>keine Bildschirminhalte, keine Eingaben und
-    keine personenbezogenen Daten</strong> aus — die einzigen Ausnahmen sind die beiden folgenden,
-    separat zu aktivierenden Beta-Funktionen. Über die Bedienungshilfen-API erlangte Informationen
+    keine personenbezogenen Daten</strong> aus — die einzigen Ausnahmen sind die beiden folgenden
+    Funktionen zur Reels-/Shorts-Blockierung, die erst nach deiner ausdrücklichen Zustimmung aktiv
+    sind. Über die Bedienungshilfen-API erlangte Informationen
     werden weder gespeichert (über den Moment hinaus) noch übertragen oder an Dritte weitergegeben.
     Du kannst die Funktion jederzeit in den Systemeinstellungen deaktivieren.</li>
-  <li><strong>„Nur Instagram-Reels blockieren“ (optional, experimentell):</strong> Wenn du diese
-    Beta-Funktion zusätzlich aktivierst und ihr zustimmst, liest WSD über die Bedienungshilfen-API
-    <em>ausschließlich während Instagram im Vordergrund ist</em> die Bildschirminhalte von Instagram –
-    einzig, um zu erkennen, ob der Reels-Bildschirm geöffnet ist, und ihn zu blockieren. Keine andere
+  <li><strong>„Instagram-Reels blockieren“:</strong> Wird bei der Einrichtung angeboten, ist aber
+    standardmäßig aus und erst aktiv, nachdem du ihr separat zugestimmt hast (bei der Einrichtung oder
+    später in der App). Sobald sie aktiv ist, liest WSD über die Bedienungshilfen-API
+    <em>ausschließlich während Instagram im Vordergrund ist</em> die Bildschirminhalte von Instagram und
+    bemerkt das Scrollen innerhalb des Reels-Feeds (technische Kennungen der Ansicht, Position und
+    Scroll-Weite – keine Texte) – einzig, um zu erkennen, ob der Reels-Feed geöffnet ist, und ihn zu
+    blockieren. Standardmäßig wird der Feed blockiert, sobald er sich öffnet. Mit Premium kannst du
+    „Reels &amp; Shorts von Freunden ansehen“ einschalten: Dann kannst du ein Reel ansehen, auf dem du
+    landest oder das dir jemand schickt, und erst das Wischen zum nächsten Reel wird blockiert. Keine
+    andere
     App wird gelesen; die Inhalte werden nur kurzzeitig auf deinem Gerät ausgewertet und
-    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Die Funktion ist standardmäßig
-    aus und kann jederzeit in der App deaktiviert werden.</li>
-  <li><strong>„Nur YouTube-Shorts blockieren“ (optional, experimentell):</strong> Wenn du diese
-    separate Beta-Funktion aktivierst und ihr zustimmst, liest WSD über die Bedienungshilfen-API
-    <em>ausschließlich während YouTube im Vordergrund ist</em> die Bildschirminhalte von YouTube –
-    einzig, um zu erkennen, ob der Shorts-Bildschirm geöffnet ist, und ihn zu blockieren. Keine andere
+    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Ohne deine Zustimmung bleibt
+    die Funktion aus; sie kann jederzeit in der App deaktiviert werden.</li>
+  <li><strong>„YouTube-Shorts blockieren“:</strong> Wird bei der Einrichtung angeboten, ist aber
+    standardmäßig aus und erst aktiv, nachdem du ihr separat zugestimmt hast (bei der Einrichtung oder
+    später in der App). Sobald sie aktiv ist, liest WSD über die Bedienungshilfen-API
+    <em>ausschließlich während YouTube im Vordergrund ist</em> die Bildschirminhalte von YouTube und
+    bemerkt das Scrollen innerhalb des Shorts-Feeds (technische Kennungen der Ansicht, Position und
+    Scroll-Weite – keine Texte) – einzig, um zu erkennen, ob der Shorts-Feed geöffnet ist, und ihn zu
+    blockieren. Standardmäßig wird der Feed blockiert, sobald er sich öffnet. Mit Premium kannst du
+    „Reels &amp; Shorts von Freunden ansehen“ einschalten: Dann kannst du ein Short ansehen, auf dem du
+    landest oder das dir jemand schickt, und erst das Wischen zum nächsten Short wird blockiert. Keine
+    andere
     App wird gelesen; die Inhalte werden nur kurzzeitig auf deinem Gerät ausgewertet und
-    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Die Funktion ist standardmäßig
-    aus und kann jederzeit in der App deaktiviert werden.</li>
+    <strong>niemals gespeichert, übertragen oder weitergegeben</strong>. Ohne deine Zustimmung bleibt
+    die Funktion aus; sie kann jederzeit in der App deaktiviert werden.</li>
   <li><strong>Einblendung über anderen Apps (Overlay):</strong> Nur zur Anzeige des Erinnerungs-Overlays
     auf deinem Gerät.</li>
   <li><strong>Kamera (optional):</strong> Nur wenn du eine Aufgabe mit Kamera-Überprüfung startest
@@ -111,8 +133,11 @@ deinem Gerät verarbeitet und niemals an uns oder Dritte übertragen:</strong></
 (Kategorie, Bewertung, Titel, Beschreibung), auf Wunsch einen von dir erstellten Screenshot, sowie
 technische Angaben (Gerätemodell, Android-Version, App-Version) per E-Mail an unser Support-Postfach.
 Der Versand erfolgt über <strong>Google Apps Script / Gmail</strong> (Google Ireland Ltd.) als
-Auftragsverarbeiter. Gibst du freiwillig deine E-Mail-Adresse an (z.&nbsp;B. um als Beta-Tester
-kontaktiert zu werden), wird auch diese übermittelt. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1
+Auftragsverarbeiter. Gibst du freiwillig deine E-Mail-Adresse an (z.&nbsp;B. damit wir dir antworten,
+dir im Rahmen einer Feedback-Aktion einen Google-Play-Promo-Code für Premium schicken oder dich als
+Beta-Tester kontaktieren können), wird auch diese übermittelt; wir nutzen sie nur für diese Antwort.
+Ob ein Feedback einen Promo-Code erhält, entscheiden wir von Hand. Den Code löst du selbst bei Google
+Play ein, wir verknüpfen ihn nicht mit deinen Daten in der App. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1
 lit.&nbsp;a DSGVO (Einwilligung durch aktives Absenden). Wir nutzen das Feedback ausschließlich zur
 Verbesserung der App und löschen es, sobald es dafür nicht mehr erforderlich ist, spätestens jedoch
 12 Monate nach Eingang. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen
@@ -143,9 +168,16 @@ Deutschland (AWS-Region <code>eu-central-1</code>) betrieben wird.</p>
     Limit), Aufgabe erledigt (Kennung der Aufgabe, Art der Überprüfung, Anzahl erhaltener Gems),
     Gewohnheit gespeichert oder gelöscht, To-do erstellt oder erledigt, Erinnerung eingestellt
     (ja/nein), Check-in abgeschickt (Anzahl beantworteter Fragen), Reflexion gespeichert
-    (gewählte Stimmung), Bildschirmzeit gekauft (Paketgröße, Gem-Preis), Blockier-Overlay angezeigt
-    (Auslöser, ob überspringbar, welche Overlay-Variante, ggf. Dauer der laufenden Sitzung),
-    Feedback abgeschickt (Art, Bewertung, ob ein Screenshot angehängt war).</li>
+    (gewählte Stimmung), Blockier-Overlay angezeigt (Grund: Tageslimit, Pause, Reels oder Shorts;
+    welche Overlay-Variante), Feed verlassen (Reels oder Shorts), Frage „Wie lange?“ angezeigt (ohne
+    Zusatzangaben), Sitzung gestartet (gewählte Minuten; ob das Vorhaben aus einem To-do, einer Idee,
+    eigenem Text oder gar nicht stammt — nicht der Text selbst), Nachfrage beantwortet (geschafft
+    ja/nein), Blocker-Einstellung auf Probe gelockert (Art der Einstellung — Sperrliste, Limit oder
+    Feed — und ob sie erst später gilt; nicht welche App und nicht der Wert), Probe beendet (Art der
+    Einstellung; behalten, zurückgesetzt, rückgängig gemacht oder abgebrochen), Feedback abgeschickt
+    (Art, Bewertung, ob ein Screenshot angehängt war), Premium-Seite geöffnet (von wo aus — z.&nbsp;B.
+    Gewohnheiten, Waddle-Stile, Profil), Premium gekauft (nur ob Abo oder Einmalkauf; keine Kauf-Kennung,
+    Bestellnummer oder Betrag).</li>
   <li><strong>Automatische technische Angaben</strong>, die das PostHog-SDK jedem Ereignis anhängt:
     App-Version und Build-Nummer, Gerätehersteller, Gerätemodell und Gerätetyp, Betriebssystem und
     dessen Version, Bildschirmgröße und -dichte, Spracheinstellung, Zeitzone, Verbindungsart bzw.
@@ -167,7 +199,8 @@ Deutschland (AWS-Region <code>eu-central-1</code>) betrieben wird.</p>
 </ul>
 
 <p><strong>Ausdrücklich nicht übermittelt werden:</strong> die Texte deiner Aufgaben, To-dos,
-Notizen und Reflexionen; Namen oder Verweise aus deinen Kontakten; Screenshots, Fotos oder
+Notizen und Reflexionen; der Text deiner Vorhaben („Danach werde ich …“); Namen oder Verweise aus
+deinen Kontakten; Screenshots, Fotos oder
 Kamerainhalte; die Namen oder Paketnamen der von dir blockierten oder geöffneten Apps; deine
 Bildschirmzeit-Messwerte; sowie Werbe-IDs. WSD nutzt <strong>keine Sitzungsaufzeichnung</strong>
 (kein „Session Replay“, keine Bildschirmaufnahme), kein Tracking über App-Grenzen hinweg und keine
@@ -194,6 +227,30 @@ EU-Standardvertragsklauseln (SCC). Weitere Informationen:
 nicht nötig. Unabhängig davon endet die Erhebung sofort, wenn du die App deinstallierst; das Löschen
 der App-Daten in den Android-Einstellungen setzt zusätzlich die Installations-Kennung zurück.</p>
 
+<h3>4.4 Käufe über Google Play (Premium)</h3>
+<p>WSD bietet optional <strong>Premium</strong> an — als Abo oder als Einmalkauf —, mit dem du
+unbegrenzt Gewohnheiten anlegen, alle Waddle-Stile nutzen und „Reels &amp; Shorts von Freunden
+ansehen“ einschalten kannst. Das Blockieren selbst bleibt immer kostenlos. Der Kauf wird vollständig über das <strong>Abrechnungssystem von Google
+Play</strong> abgewickelt. Vertragspartner für die Zahlung ist Google; Zahlungsdaten wie Kartennummer,
+Kontodaten oder Rechnungsadresse gibst du nur bei Google ein — <strong>wir erhalten sie nie</strong>.
+Für diese Verarbeitung ist Google selbst verantwortlich; es gilt die
+<a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a>.</p>
+<p><strong>Was die App erfährt und speichert:</strong> Über die Google-Play-App auf deinem Gerät erfährt
+WSD, welches Premium-Produkt du besitzt, ob der Kauf abgeschlossen oder noch ausstehend ist und wann er
+getätigt wurde. Damit Google Play den Kauf als zugestellt verbucht, bestätigt die App ihn gegenüber
+Google Play. Auf deinem Gerät gespeichert werden nur das Produkt, der Kaufstatus und Zeitpunkte —
+<strong>keine Kauf-Kennung, keine Bestellnummer, keine Zahlungsdaten</strong>. Diese Angaben verlassen
+dein Gerät nicht in Richtung unserer Server; wir sehen weder dein Google-Konto noch deine Käufe. In der
+Produktanalyse (Abschnitt&nbsp;4.3) erfassen wir höchstens, dass ein Kauf abgeschlossen wurde und
+welcher Art er ist (Abo oder Einmalkauf) — niemals Kauf-Kennungen, Bestellnummern oder Beträge.</p>
+<p><strong>Technische Diagnosedaten:</strong> Die in die App eingebundene Google-Play-Billing-Bibliothek
+kommuniziert mit der Google-Play-App auf deinem Gerät und kann dabei technische Informationen zur
+Kaufabwicklung (z.&nbsp;B. ob ein Aufruf gelungen ist, Verbindungsprobleme) an Google übermitteln.</p>
+<p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Erfüllung des
+Vertrags über Premium). Dein Kauf ist an dein Google-Konto gebunden; nach einer Neuinstallation stellt
+Google Play ihn wieder her. Ein Abo kündigst du jederzeit in Google Play unter
+„Zahlungen &amp; Abos“.</p>
+
 <h2>5. Empfänger / Auftragsverarbeiter</h2>
 <ul>
   <li><strong>Google Ireland Ltd.</strong> (Google Apps Script / Gmail) — nur für freiwillig gesendetes Feedback (Versand an unser Support-Postfach).</li>
@@ -201,6 +258,8 @@ der App-Daten in den Android-Einstellungen setzt zusätzlich die Installations-K
   <li><strong>PostHog, Inc.</strong>, 2261 Market Street #4008, San Francisco, CA 94114, USA —
     Produktanalyse und Fehlerberichte, verarbeitet auf der EU-Instanz in Frankfurt am Main
     (Abschnitt&nbsp;4.3).</li>
+  <li><strong>Google Ireland Ltd.</strong> (Google Play) — nur wenn du Premium kaufst: Abwicklung des
+    Kaufs in eigener Verantwortung (Abschnitt&nbsp;4.4).</li>
 </ul>
 <p>Eine darüber hinausgehende Weitergabe personenbezogener Daten findet nicht statt. Wir verkaufen
 keine Daten. Werbenetzwerke und Marketing-Dienstleister erhalten keine Daten aus der App.</p>

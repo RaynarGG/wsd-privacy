@@ -17,7 +17,7 @@
 <body>
 <p class="lang"><a href="index.html">Deutsche Version</a></p>
 <h1>Privacy Policy – WSD (“What Should I Do”)</h1>
-<p class="meta">Last updated: August 31, 2026</p>
+<p class="meta">Last updated: October 18, 2026</p>
 
 <h2>1. Controller</h2>
 <p>
@@ -34,13 +34,21 @@ reflections/journal entries, settings, and the list of “distracting apps” yo
 <strong>only locally on your device</strong>. We do not collect, transmit, sell, or share this data.
 The app shows no ads and contains no advertising or marketing trackers.</p>
 <p>This also covers, in particular: your to-do list, your task reminders, your blocking settings
-(daily limit, per-app limits, sleep phase), your gem balance, and the names you type or pick from your
+(daily limit, per-app limits, sleep phase), your gem balance, your premium status (see
+section&nbsp;4.4), and the names you type or pick from your
 contacts for tasks such as “Call {name}” (see section&nbsp;3).</p>
+<p>Your <strong>usage sessions</strong> are stored only locally as well: when you open a blocked app,
+WSD asks how long you want to use it. It stores the start time, the length you chose and — only if
+you want — your <strong>plan for afterwards</strong> (“Afterwards I'll …”, at most 60 characters,
+written by you or taken from a to-do or an idea) together with your later answer on whether you got
+to it. This plan is <strong>never transmitted</strong>, not synced, and deleted together with the
+rest of the app data when you uninstall the app or clear its data.</p>
 <p>The app still contains a <strong>disabled</strong> area for optional user accounts and cloud sync.
 It is unreachable in the published version: there is no sign-in, and your content is not transmitted
 to any server.</p>
 <p>The exceptions to this core principle — the cases in which data does leave your device — are
-described in full in section&nbsp;4 (voluntary feedback, crash reports, product analytics).</p>
+described in full in section&nbsp;4 (voluntary feedback, crash reports, product analytics, purchases
+through Google Play).</p>
 
 <h2>3. Use of device permissions (on-device only)</h2>
 <p>For its core feature (detecting distracting apps and nudging you towards a meaningful activity),
@@ -57,21 +65,30 @@ your device and is never transmitted to us or to third parties:</strong></p>
     Android's accessibility API solely to detect the <em>package name</em> of the app currently in the
     foreground, so it can reliably block apps you chose in real time. WSD does <strong>not read screen
     content, input, or any personal data</strong> through this API — the only exceptions are the two
-    separately enabled beta features described below. Information obtained via the
+    Reels/Shorts blocking features described below, which are only active after your explicit
+    consent. Information obtained via the
     accessibility API is neither stored (beyond the moment of detection) nor transmitted or shared with
     third parties. You can disable this at any time in your system settings.</li>
-  <li><strong>“Block Instagram Reels only” (optional, experimental):</strong> If you separately turn
-    on this beta feature and consent to it, WSD additionally reads Instagram's on-screen content
-    <em>via the accessibility API, only while Instagram is in the foreground</em>, for the sole purpose
-    of recognizing whether the Reels screen is open so it can block it. No other app is read; the
+  <li><strong>“Block Instagram Reels”:</strong> Offered during setup, but off by default and only active
+    after you separately consent to it (in setup or later in the app). Once active, WSD additionally reads Instagram's on-screen content
+    <em>via the accessibility API, only while Instagram is in the foreground</em>, and notices scrolling
+    inside the Reels feed (technical view identifiers, position and scroll distance — no text), for the
+    sole purpose of recognizing whether the Reels feed is open and blocking it. By default the feed is
+    blocked as soon as it opens. With Premium you can turn on “Watch Reels &amp; Shorts from friends”: you
+    can then watch a reel you land on or that someone sends you, and only swiping to the next reel is
+    blocked. No other app is read; the
     content is evaluated transiently on your device and is <strong>never stored, transmitted, or
-    shared</strong>. This feature is off by default and can be turned off anytime in the app.</li>
-  <li><strong>“Block YouTube Shorts only” (optional, experimental):</strong> If you separately turn
-    on this beta feature and consent to it, WSD additionally reads YouTube's on-screen content
-    <em>via the accessibility API, only while YouTube is in the foreground</em>, for the sole purpose
-    of recognizing whether the Shorts screen is open so it can block it. No other app is read; the
+    shared</strong>. Without your consent the feature stays off, and it can be turned off anytime in the app.</li>
+  <li><strong>“Block YouTube Shorts”:</strong> Offered during setup, but off by default and only active
+    after you separately consent to it (in setup or later in the app). Once active, WSD additionally reads YouTube's on-screen content
+    <em>via the accessibility API, only while YouTube is in the foreground</em>, and notices scrolling
+    inside the Shorts feed (technical view identifiers, position and scroll distance — no text), for the
+    sole purpose of recognizing whether the Shorts feed is open and blocking it. By default the feed is
+    blocked as soon as it opens. With Premium you can turn on “Watch Reels &amp; Shorts from friends”: you
+    can then watch a short you land on or that someone sends you, and only swiping to the next short is
+    blocked. No other app is read; the
     content is evaluated transiently on your device and is <strong>never stored, transmitted, or
-    shared</strong>. This feature is off by default and can be turned off anytime in the app.</li>
+    shared</strong>. Without your consent the feature stays off, and it can be turned off anytime in the app.</li>
   <li><strong>Display over other apps (overlay):</strong> only to show the nudge overlay on your device.</li>
   <li><strong>Camera (optional):</strong> Only when you start a task with camera verification
     (e.g. “20 push-ups” via motion detection or “photograph grass” via image recognition) does WSD
@@ -102,8 +119,10 @@ your device and is never transmitted to us or to third parties:</strong></p>
 title, description), an optional screenshot you attach, and technical details (device model, Android
 version, app version) by e-mail to our support inbox. Delivery is handled via
 <strong>Google Apps Script / Gmail</strong> (Google Ireland Ltd.) as our processor. If you
-voluntarily provide your e-mail address (e.g. to be contacted as a beta tester), it is transmitted
-as well. Legal basis:
+voluntarily provide your e-mail address (e.g. so we can reply, send you a Google Play promo code for
+Premium as part of a feedback promotion, or contact you as a beta tester), it is transmitted as well;
+we use it only for that reply. Whether feedback earns a promo code is decided by hand. You redeem the
+code yourself with Google Play; we do not link it to your data in the app. Legal basis:
 Art. 6(1)(a) GDPR (consent by actively submitting). We use feedback solely to improve the app and
 delete it once no longer needed, at the latest 12 months after receipt. You may withdraw your consent
 at any time with future effect and request deletion of your feedback by e-mail.</p>
@@ -131,9 +150,15 @@ analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>E
     (number of interests chosen, number of blocked apps, limit configured), task completed (task
     identifier, type of verification, gems awarded), habit saved or deleted, to-do created or
     completed, reminder set (yes/no), check-in submitted (number of questions answered), reflection
-    saved (mood selected), screen time purchased (pack size, gem price), blocking overlay shown
-    (trigger, whether skippable, which overlay variant, session length where applicable), feedback
-    submitted (type, rating, whether a screenshot was attached).</li>
+    saved (mood selected), blocking overlay shown (reason: daily limit, break, Reels or Shorts; which
+    overlay variant), feed left (Reels or Shorts), “how long?” question shown (no attributes), session
+    started (minutes chosen; whether the plan came from a to-do, an idea, your own text or nowhere —
+    not the text itself), follow-up answered (done yes/no), a blocking setting loosened on trial (kind
+    of setting — block list, limit or feed — and whether it starts later; not which app and not the
+    value), a trial ended (kind of setting; kept, reverted, undone or cancelled), feedback submitted
+    (type, rating, whether a screenshot was attached), Premium page opened (from where — e.g. habits,
+    Waddle styles, profile), Premium purchased (only whether subscription or one-time; no purchase token,
+    order number or amount).</li>
   <li><strong>Automatic technical attributes</strong> that the PostHog SDK adds to every event: app
     version and build number, device manufacturer, device model and type, operating system and its
     version, screen size and density, language setting, time zone, connection type or mobile carrier,
@@ -155,7 +180,7 @@ analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>E
 </ul>
 
 <p><strong>Explicitly not transmitted:</strong> the text of your tasks, to-dos, notes, and
-reflections; names or references from your contacts; screenshots, photos, or camera content; the
+reflections; the text of your plans (“Afterwards I'll …”); names or references from your contacts; screenshots, photos, or camera content; the
 names or package names of the apps you block or open; your screen-time measurements; and advertising
 IDs. WSD uses <strong>no session recording</strong> (no “session replay”, no screen capture), no
 cross-app tracking, and passes nothing to advertising networks.</p>
@@ -178,6 +203,29 @@ e-mail to <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</
 reason required. Independently of that, collection stops immediately when you uninstall the app;
 clearing the app's data in Android settings additionally resets the installation identifier.</p>
 
+<h3>4.4 Purchases through Google Play (Premium)</h3>
+<p>WSD optionally offers <strong>Premium</strong> — as a subscription or a one-time purchase — which
+lets you create unlimited habits, use every Waddle style and turn on “Watch Reels &amp; Shorts from
+friends”. Blocking itself always stays free. The purchase is handled entirely by <strong>Google Play's billing
+system</strong>. Google is your contract partner for the payment; payment details such as your card
+number, bank details or billing address are entered only with Google — <strong>we never receive
+them</strong>. Google is responsible for this processing itself; the
+<a href="https://policies.google.com/privacy">Google Privacy Policy</a> applies.</p>
+<p><strong>What the app learns and stores:</strong> through the Google Play app on your device, WSD
+learns which Premium product you own, whether the purchase is complete or still pending, and when it
+was made. So that Google Play records the purchase as delivered, the app confirms it to Google Play.
+Only the product, the purchase status and timestamps are stored on your device — <strong>no purchase
+token, no order number, no payment details</strong>. This information does not leave your device
+towards our servers; we see neither your Google account nor your purchases. In product analytics
+(section&nbsp;4.3) we record at most that a purchase was completed and of which kind it was
+(subscription or one-time) — never purchase tokens, order numbers or amounts.</p>
+<p><strong>Technical diagnostics:</strong> the Google Play Billing Library included in the app
+communicates with the Google Play app on your device and may send technical information about the
+purchase flow (e.g. whether a call succeeded, connection problems) to Google.</p>
+<p><strong>Legal basis:</strong> Art.&nbsp;6(1)(b) GDPR (performance of the Premium contract). Your
+purchase is tied to your Google account; Google Play restores it after a reinstall. You can cancel a
+subscription at any time in Google Play under “Payments &amp; subscriptions”.</p>
+
 <h2>5. Recipients / processors</h2>
 <ul>
   <li><strong>Google Ireland Ltd.</strong> (Google Apps Script / Gmail) — only for voluntarily submitted feedback (delivery to our support inbox).</li>
@@ -185,6 +233,8 @@ clearing the app's data in Android settings additionally resets the installation
   <li><strong>PostHog, Inc.</strong>, 2261 Market Street #4008, San Francisco, CA 94114, USA —
     product analytics and error reports, processed on the EU instance in Frankfurt am Main
     (section&nbsp;4.3).</li>
+  <li><strong>Google Ireland Ltd.</strong> (Google Play) — only if you buy Premium: handles the
+    purchase under its own responsibility (section&nbsp;4.4).</li>
 </ul>
 <p>No other personal data is shared. We do not sell data. Advertising networks and marketing service
 providers receive no data from the app.</p>
