@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy – WSD (What Should I Do)</title>
+<title>Privacy Policy – Aufblick (WSD – What Should I Do)</title>
 <style>
   :root { color-scheme: light dark; }
   body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -16,8 +16,10 @@
 </head>
 <body>
 <p class="lang"><a href="index.html">Deutsche Version</a></p>
-<h1>Privacy Policy – WSD (“What Should I Do”)</h1>
-<p class="meta">Last updated: October 18, 2026</p>
+<h1>Privacy Policy – Aufblick (WSD – “What Should I Do”)</h1>
+<p class="meta">Last updated: October 19, 2026</p>
+<p>This privacy policy applies to the Android app <strong>“Aufblick”</strong> (on Google Play and
+below also called “WSD – What Should I Do” or “WSD”).</p>
 
 <h2>1. Controller</h2>
 <p>
@@ -36,7 +38,9 @@ The app shows no ads and contains no advertising or marketing trackers.</p>
 <p>This also covers, in particular: your to-do list, your task reminders, your blocking settings
 (daily limit, per-app limits, sleep phase), your gem balance, your premium status (see
 section&nbsp;4.4), and the names you type or pick from your
-contacts for tasks such as “Call {name}” (see section&nbsp;3).</p>
+contacts for tasks such as “Arrange a meetup with {name}” (see section&nbsp;3), and your daily usage
+totals for the focus streak (one number of minutes per day for all blocked apps together, whether a
+limit was reached or the emergency pass was used — not broken down by app).</p>
 <p>Your <strong>usage sessions</strong> are stored only locally as well: when you open a blocked app,
 WSD asks how long you want to use it. It stores the start time, the length you chose and — only if
 you want — your <strong>plan for afterwards</strong> (“Afterwards I'll …”, at most 60 characters,
@@ -46,6 +50,11 @@ rest of the app data when you uninstall the app or clear its data.</p>
 <p>The app still contains a <strong>disabled</strong> area for optional user accounts and cloud sync.
 It is unreachable in the published version: there is no sign-in, and your content is not transmitted
 to any server.</p>
+<p><strong>Android backup:</strong> if you have turned on backup to your Google account (Android
+backup) on your device, Android backs up the app's data — including the content listed above — to your
+own Google account and restores it when you reinstall the app or move to a new device. This backup is
+performed for you by Android/Google and controlled by you in Android settings; we have no access to it
+and receive no data through it.</p>
 <p>The exceptions to this core principle — the cases in which data does leave your device — are
 described in full in section&nbsp;4 (voluntary feedback, crash reports, product analytics, purchases
 through Google Play).</p>
@@ -56,7 +65,8 @@ WSD uses the following Android permissions. <strong>All resulting data is proces
 your device and is never transmitted to us or to third parties:</strong></p>
 <ul>
   <li><strong>Usage access:</strong> WSD reads locally which app is in the foreground and how long apps
-    have been used, in order to enforce the screen-time limits you set yourself.</li>
+    have been used, in order to enforce the screen-time limits you set yourself, remind you after a
+    usage time you chose, and show you your own daily totals and focus streak.</li>
   <li><strong>List of installed apps:</strong> So you can choose which apps to block, WSD reads
     locally which launchable apps are installed on the device (name and icon). This list is used only
     to render that picker and <strong>never leaves your device</strong>; only the apps you selected are
@@ -98,7 +108,8 @@ your device and is never transmitted to us or to third parties:</strong></p>
     video, or camera content is stored, transmitted, or shared with us or third parties</strong>; the
     camera runs only in the foreground during the check. If you deny the permission, you can instead
     mark the task done manually.</li>
-  <li><strong>Contacts (optional):</strong> For tasks such as “Call {name}” or “Text {name}” you can
+  <li><strong>Contacts (optional):</strong> For tasks such as “Arrange a meetup with {name}” (on older
+    installs also “Call {name}” or “Text {name}”) you can
     pick a person via your <em>system's contact picker</em> instead of typing the name. WSD evaluates
     only the <strong>entry you picked</strong> and takes from it exclusively the
     <strong>display name</strong> plus an internal reference to that contact (its “lookup key”) — so
@@ -108,8 +119,9 @@ your device and is never transmitted to us or to third parties:</strong></p>
     and transmits no contact data to us or third parties. The permission is
     <strong>optional</strong>: if you deny it, only the picker button goes away — you can still enter
     names manually. You can revoke it at any time in your Android settings.</li>
-  <li><strong>Notifications:</strong> for task reminders and the persistent notification of the
-    screen-time service.</li>
+  <li><strong>Notifications:</strong> for task and to-do reminders, notices about the end of a usage
+    session or the time spent in a blocked app, questions about settings on trial, and the persistent
+    notification of the screen-time service. All notifications are created locally on your device.</li>
 </ul>
 
 <h2>4. Data that may leave your device</h2>
@@ -153,7 +165,8 @@ analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>E
     saved (mood selected), blocking overlay shown (reason: daily limit, break, Reels or Shorts; which
     overlay variant), feed left (Reels or Shorts), “how long?” question shown (no attributes), session
     started (minutes chosen; whether the plan came from a to-do, an idea, your own text or nowhere —
-    not the text itself), follow-up answered (done yes/no), a blocking setting loosened on trial (kind
+    not the text itself), follow-up answered (done yes/no), reminder shown (which kind of reminder; not which app
+    and not the minutes),a blocking setting loosened on trial (kind
     of setting — block list, limit or feed — and whether it starts later; not which app and not the
     value), a trial ended (kind of setting; kept, reverted, undone or cancelled), feedback submitted
     (type, rating, whether a screenshot was attached), Premium page opened (from where — e.g. habits,
@@ -247,8 +260,10 @@ with future effect. Contact us at
 lodge a complaint with a data protection supervisory authority (Art. 77 GDPR).</p>
 <p>You may object at any time, without giving reasons, to the product analytics (section&nbsp;4.3) and
 the crash reports (section&nbsp;4.2) — both of which rest on a legitimate interest.</p>
-<p>Note: since all app content is stored locally, you delete it completely by uninstalling the app or
-clearing its data in Android settings.</p>
+<p>Note: since all app content is stored locally, you delete it from the device by uninstalling the
+app or clearing its data in Android settings. If Android backup is on (section&nbsp;2), a copy may
+remain in your Google account; you can delete it in your Google account's backup settings
+(Google Drive → Backups).</p>
 
 <h2>7. Children</h2>
 <p>WSD is not directed at children under 16. We do not knowingly collect data from children.</p>
