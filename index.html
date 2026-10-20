@@ -23,7 +23,7 @@ und im Folgenden auch „WSD – What Should I Do“ bzw. „WSD“ genannt).</p
 
 <h2>1. Verantwortlicher</h2>
 <p>
-  Ragnar Konrand Michaelson Weisbach<br>
+  Ragnar Weisbach<br>
   Zeitzerstraße 22 <br>
   07743 Jena, Deutschland<br>
   E-Mail: <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a>
@@ -59,8 +59,8 @@ Inhalte — in deinem eigenen Google-Konto und stellt sie bei einer Neuinstallat
 neues Gerät wieder her. Diese Sicherung wird von Android bzw. Google für dich durchgeführt und von dir in
 den Android-Einstellungen gesteuert; wir haben darauf keinen Zugriff und erhalten dabei keine Daten.</p>
 <p>Ausnahmen von diesem Grundprinzip — also die Fälle, in denen Daten dein Gerät verlassen — sind
-vollständig in Abschnitt&nbsp;4 beschrieben (freiwilliges Feedback, Absturzberichte, Produktanalyse,
-Käufe über Google Play).</p>
+vollständig in Abschnitt&nbsp;4 beschrieben (freiwilliges Feedback, Absturzberichte und Produktanalyse
+nur mit deiner Einwilligung, Käufe über Google Play).</p>
 
 <h2>3. Nutzung der Geräteberechtigungen (nur auf dem Gerät)</h2>
 <p>Für ihre Kernfunktion (Erkennen ablenkender Apps und Anstoß zu einer sinnvollen Aktivität) nutzt
@@ -157,23 +157,28 @@ Verbesserung der App und löschen es, sobald es dafür nicht mehr erforderlich i
 und die Löschung deines Feedbacks per E-Mail verlangen.</p>
 
 <h3>4.2 Absturzberichte (Firebase Crashlytics)</h3>
+<p><strong>Nur mit deiner Einwilligung:</strong> Absturzberichte werden nur gesendet, wenn du
+„Absturzberichte senden“ beim ersten Start oder später im Profil eingeschaltet hast; standardmäßig ist es
+aus. Ohne Einwilligung sammelt Crashlytics nichts.</p>
 <p>Um Abstürze und Fehler zu erkennen und zu beheben, nutzt WSD <strong>Firebase Crashlytics</strong>
 (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland). Bei einem Absturz oder Fehler
 werden übermittelt: Absturz-Stacktrace, Geräteinformationen (Modell, Betriebssystemversion,
 Speicherzustand), App-Version sowie eine von Crashlytics erzeugte Installations-ID. Es werden keine
 Inhalte deiner Aufgaben, Reflexionen oder deine App-Nutzungsdaten übermittelt. Rechtsgrundlage:
-Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an einer stabilen, fehlerfreien App).
+deine Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO, §&nbsp;25 Abs.&nbsp;1 TDDDG), die du
+jederzeit im Profil mit Wirkung für die Zukunft widerrufen kannst; noch nicht gesendete Berichte werden
+dabei gelöscht. (App-Versionen vor dem 20.&nbsp;Oktober 2026 sendeten Absturzberichte ohne Abfrage auf
+Grundlage unseres berechtigten Interesses, Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO.)
 Google speichert Crash-Daten in der Regel 90 Tage. Dabei kann eine Übermittlung in die USA stattfinden;
 Google ist nach dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen:
 <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
 <h3>4.3 Produktanalyse (PostHog)</h3>
-<p><strong>Derzeit abgeschaltet:</strong> Ab der App-Version vom 20.&nbsp;Oktober 2026 ist die
-Produktanalyse <strong>deaktiviert</strong> — die App sendet keine Ereignisse, keine Installations-Kennung
-und keine Fehlerberichte mehr an PostHog. Sollten wir sie künftig wieder nutzen, dann nur nach deiner
-ausdrücklichen Einwilligung in der App. Die folgende Beschreibung gilt nur noch für <strong>ältere
-App-Versionen</strong>, bis du die App aktualisierst, sowie für bereits erhobene Daten (Löschung
-spätestens 12 Monate nach Erhebung).</p>
+<p><strong>Nur mit deiner Einwilligung:</strong> Ab der App-Version vom 20.&nbsp;Oktober 2026 läuft die
+Produktanalyse nur, wenn du „Nutzungsstatistik senden“ beim ersten Start oder später im Profil
+eingeschaltet hast; standardmäßig ist es aus. Ohne Einwilligung wird PostHog gar nicht gestartet — es
+wird keine Installations-Kennung angelegt und nichts gesendet. Ältere App-Versionen nutzten die
+Produktanalyse ohne Abfrage, bis du die App aktualisierst.</p>
 <p>Um zu verstehen, welche Funktionen tatsächlich genutzt werden und wo Abläufe abbrechen, nutzt WSD
 das Produktanalyse-Werkzeug <strong>PostHog</strong>. Wir verwenden dabei bewusst die
 <strong>EU-Instanz von PostHog</strong> (<code>eu.i.posthog.com</code>), die in Frankfurt am Main,
@@ -225,10 +230,12 @@ Bildschirmzeit-Messwerte; sowie Werbe-IDs. WSD nutzt <strong>keine Sitzungsaufze
 (kein „Session Replay“, keine Bildschirmaufnahme), kein Tracking über App-Grenzen hinweg und keine
 Weitergabe an Werbenetzwerke.</p>
 
-<p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes
-Interesse an der Verbesserung und Stabilität der App). Bei der Abwägung berücksichtigen wir, dass die
-Daten pseudonym sind, keine von dir geschriebenen Inhalte enthalten, nicht zu Werbezwecken genutzt
-und nicht mit anderen Quellen zusammengeführt werden. <strong>Speicherdauer:</strong> Wir bewahren
+<p><strong>Rechtsgrundlage:</strong> deine Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO,
+§&nbsp;25 Abs.&nbsp;1 TDDDG). Für Daten aus App-Versionen vor dem 20.&nbsp;Oktober 2026, die ohne Abfrage
+erhoben wurden, stützten wir uns auf unser berechtigtes Interesse an der Verbesserung und Stabilität der
+App (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO); die Daten sind pseudonym, enthalten keine von dir
+geschriebenen Inhalte, werden nicht zu Werbezwecken genutzt und nicht mit anderen Quellen
+zusammengeführt. <strong>Speicherdauer:</strong> Wir bewahren
 Analysedaten nur so lange auf, wie wir sie zur Produktverbesserung benötigen — längstens
 <strong>12 Monate</strong> ab Erhebung.</p>
 
@@ -240,10 +247,12 @@ EU-Standardvertragsklauseln (SCC). Weitere Informationen:
 <a href="https://posthog.com/dpa">posthog.com/dpa</a> und
 <a href="https://posthog.com/subprocessors">posthog.com/subprocessors</a>.</p>
 
-<p><strong>Widerspruch:</strong> Du kannst dieser Verarbeitung jederzeit widersprechen
-(Art.&nbsp;21 DSGVO) — eine E-Mail an
-<a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a> genügt, eine Begründung ist
-nicht nötig. Unabhängig davon endet die Erhebung sofort, wenn du die App deinstallierst; das Löschen
+<p><strong>Widerruf:</strong> Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft
+widerrufen, indem du im Profil unter „Nutzungsstatistik &amp; Absturzberichte“ den Schalter „Nutzungsstatistik
+senden“ ausschaltest — die Erhebung endet sofort. Für Daten aus älteren App-Versionen kannst du per
+E-Mail an <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a> widersprechen
+(Art.&nbsp;21 DSGVO), eine Begründung ist nicht nötig. Unabhängig davon endet die Erhebung sofort, wenn
+du die App deinstallierst; das Löschen
 der App-Daten in den Android-Einstellungen setzt zusätzlich die Installations-Kennung zurück.</p>
 
 <h3>4.4 Käufe über Google Play (Premium)</h3>
@@ -289,9 +298,10 @@ Datenübertragbarkeit sowie Widerspruch gegen Verarbeitungen auf Grundlage berec
 Erteilte Einwilligungen kannst du jederzeit mit Wirkung für die Zukunft widerrufen. Wende dich dazu
 an <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a>. Außerdem hast du das
 Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art.&nbsp;77 DSGVO).</p>
-<p>Gegen die Produktanalyse (Abschnitt&nbsp;4.3) und die Absturzberichte (Abschnitt&nbsp;4.2) — beide
-auf Grundlage eines berechtigten Interesses — kannst du jederzeit ohne Begründung Widerspruch
-einlegen.</p>
+<p>Die Produktanalyse (Abschnitt&nbsp;4.3) und die Absturzberichte (Abschnitt&nbsp;4.2) beruhen auf
+deiner Einwilligung. Du widerrufst sie jederzeit selbst in der App unter Profil → „Nutzungsstatistik
+&amp; Absturzberichte“; gegen Daten aus älteren App-Versionen kannst du ohne Begründung per E-Mail
+widersprechen.</p>
 <p>Hinweis: Da alle App-Inhalte lokal gespeichert sind, löschst du sie auf dem Gerät, indem du die
 App deinstallierst oder ihre Daten in den Android-Einstellungen löschst. Ist die Android-Sicherung
 eingeschaltet (Abschnitt&nbsp;2), kann eine Kopie in deinem Google-Konto verbleiben; diese löschst du in

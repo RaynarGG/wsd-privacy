@@ -23,7 +23,7 @@ below also called “WSD – What Should I Do” or “WSD”).</p>
 
 <h2>1. Controller</h2>
 <p>
-  Ragnar Konrand Michaelson Weisbach<br>
+  Ragnar Weisbach<br>
   Zeitzerstraße 22 <br>
   07743 Jena, Germany<br>
   E-mail: <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a>
@@ -56,8 +56,8 @@ own Google account and restores it when you reinstall the app or move to a new d
 performed for you by Android/Google and controlled by you in Android settings; we have no access to it
 and receive no data through it.</p>
 <p>The exceptions to this core principle — the cases in which data does leave your device — are
-described in full in section&nbsp;4 (voluntary feedback, crash reports, product analytics, purchases
-through Google Play).</p>
+described in full in section&nbsp;4 (voluntary feedback, crash reports and product analytics only with
+your consent, purchases through Google Play).</p>
 
 <h2>3. Use of device permissions (on-device only)</h2>
 <p>For its core feature (detecting distracting apps and nudging you towards a meaningful activity),
@@ -140,22 +140,27 @@ delete it once no longer needed, at the latest 12 months after receipt. You may 
 at any time with future effect and request deletion of your feedback by e-mail.</p>
 
 <h3>4.2 Crash reports (Firebase Crashlytics)</h3>
+<p><strong>Only with your consent:</strong> crash reports are only sent if you turned on “Send crash
+reports” on first launch or later in Profile; it is off by default. Without consent Crashlytics collects
+nothing.</p>
 <p>To detect and fix crashes and errors, WSD uses <strong>Firebase Crashlytics</strong> (Google Ireland
 Ltd., Gordon House, Barrow Street, Dublin 4, Ireland). On a crash or error, the following is
 transmitted: crash stack trace, device information (model, OS version, memory state), app version,
 and a Crashlytics-generated installation ID. No contents of your tasks, reflections, or your app
-usage data are transmitted. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in a stable app).
+usage data are transmitted. Legal basis: your consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG), which you
+can withdraw at any time with future effect in Profile; reports not yet sent are deleted when you do.
+(App versions before October&nbsp;20, 2026 sent crash reports without asking, based on our legitimate
+interest, Art. 6(1)(f) GDPR.)
 Google typically retains crash data for 90 days. Data may be transferred to the USA; Google is
 certified under the EU-US Data Privacy Framework. More information:
 <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
 <h3>4.3 Product analytics (PostHog)</h3>
-<p><strong>Currently switched off:</strong> from the app version of October&nbsp;20, 2026 onwards,
-product analytics is <strong>disabled</strong> — the app no longer sends events, an installation
-identifier or error reports to PostHog. Should we use it again in the future, it will only be with your
-explicit consent in the app. The description below applies only to <strong>older app versions</strong>
-until you update the app, and to data already collected (deleted at the latest 12 months after
-collection).</p>
+<p><strong>Only with your consent:</strong> from the app version of October&nbsp;20, 2026 onwards,
+product analytics only runs if you turned on “Send usage statistics” on first launch or later in
+Profile; it is off by default. Without consent PostHog is not started at all — no installation
+identifier is created and nothing is sent. Older app versions used product analytics without asking,
+until you update the app.</p>
 <p>To understand which features are actually used and where flows break down, WSD uses the product
 analytics tool <strong>PostHog</strong>. We deliberately use PostHog's <strong>EU instance</strong>
 (<code>eu.i.posthog.com</code>), which is operated in Frankfurt am Main, Germany (AWS region
@@ -204,9 +209,10 @@ names or package names of the apps you block or open; your screen-time measureme
 IDs. WSD uses <strong>no session recording</strong> (no “session replay”, no screen capture), no
 cross-app tracking, and passes nothing to advertising networks.</p>
 
-<p><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in improving and stabilizing
-the app). In balancing interests we take into account that the data is pseudonymous, contains none of
-the content you wrote, is not used for advertising, and is not combined with other sources.
+<p><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG). For data from app
+versions before October&nbsp;20, 2026 that was collected without asking, we relied on our legitimate
+interest in improving and stabilizing the app (Art. 6(1)(f) GDPR); that data is pseudonymous, contains
+none of the content you wrote, is not used for advertising, and is not combined with other sources.
 <strong>Retention:</strong> we keep analytics data only as long as we need it to improve the product —
 at most <strong>12 months</strong> from collection.</p>
 
@@ -217,9 +223,11 @@ on the EU Standard Contractual Clauses (SCCs) for such transfers. More informati
 <a href="https://posthog.com/dpa">posthog.com/dpa</a>, and
 <a href="https://posthog.com/subprocessors">posthog.com/subprocessors</a>.</p>
 
-<p><strong>Objection:</strong> you may object to this processing at any time (Art. 21 GDPR) — an
-e-mail to <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a> is enough, no
-reason required. Independently of that, collection stops immediately when you uninstall the app;
+<p><strong>Withdrawal:</strong> you can withdraw your consent at any time with future effect by
+turning off “Send usage statistics” in Profile under “Usage statistics &amp; crash reports” — collection
+stops immediately. For data from older app versions you may object by e-mail to
+<a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a> (Art. 21 GDPR), no reason
+required. Independently of that, collection stops immediately when you uninstall the app;
 clearing the app's data in Android settings additionally resets the installation identifier.</p>
 
 <h3>4.4 Purchases through Google Play (Premium)</h3>
@@ -264,8 +272,9 @@ and to object to processing based on legitimate interests. You may withdraw any 
 with future effect. Contact us at
 <a href="mailto:wsd.app.support@gmail.com">wsd.app.support@gmail.com</a>. You also have the right to
 lodge a complaint with a data protection supervisory authority (Art. 77 GDPR).</p>
-<p>You may object at any time, without giving reasons, to the product analytics (section&nbsp;4.3) and
-the crash reports (section&nbsp;4.2) — both of which rest on a legitimate interest.</p>
+<p>Product analytics (section&nbsp;4.3) and crash reports (section&nbsp;4.2) rest on your consent. You
+withdraw it yourself at any time in the app under Profile → “Usage statistics &amp; crash reports”; you
+may object to data from older app versions by e-mail without giving reasons.</p>
 <p>Note: since all app content is stored locally, you delete it from the device by uninstalling the
 app or clearing its data in Android settings. If Android backup is on (section&nbsp;2), a copy may
 remain in your Google account; you can delete it in your Google account's backup settings
